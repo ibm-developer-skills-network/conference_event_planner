@@ -34,8 +34,8 @@ export const avSlice = createSlice({
     //   quantity: 0,
     // },
     {
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/MonitorLCDlcd.svg/1200px-MonitorLCDlcd.svg.png",
-      name: "Monitors",
+      img: "https://i.pinimg.com/originals/27/9f/ae/279fae97d198471df43b1dace3b2d084.jpg",
+      name: "Signage",
       cost: 80,
       quantity: 0,
     },
