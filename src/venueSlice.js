@@ -24,13 +24,13 @@ export const venueSlice = createSlice({
     },
     {
       img: "https://images.squarespace-cdn.com/content/v1/5d08d53ad8f83100015e27be/1561143085264-DEBXO24Y11Y0X4IXJLEI/IMG_0963.jpg",
-      name: "Green Room",
+      name: " Large Meeting Room (6 People)",
       cost: 900,
       quantity: 0,
     },
     {
       img: "https://www.wework.com/ideas/wp-content/uploads/sites/4/2019/08/Web_72DPI-20190208-WeWork-Nogizaka-Conference-Room-1A-2-1440x810.jpg",
-      name: "Activity Room",
+      name: "Small Meeting Room (3 People)",
       cost: 1100,
       quantity: 0,
     },
