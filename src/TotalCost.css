@@ -1,0 +1,34 @@
+.pricing-app {
+ margin-top: 100px;
+ margin-left: 40vw;
+}
+
+
+.display_box {
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background-color: white;
+  color: #333;
+  margin: 0;
+  padding: 55px;
+  width: 600px;
+}
+
+
+.pricing-app .preheading {
+  font-family: dosis, sans-serif;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0;
+  padding: 0 0 10px;
+}
+
+.pricing-app h2 {
+  font-size: 60px;
+}
+
+.right {
+  margin-right: 0;
+}
