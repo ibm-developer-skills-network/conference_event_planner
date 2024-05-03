@@ -121,21 +121,16 @@ const Basic1 = () => {
           : item.quantity}
       </td>
       <td>{item.type === "meals" || item.numberOfPeople 
-          ? item.cost*numberOfPeople
-          :item.cost* item.quantity}</td>
+          ? `${item.cost*numberOfPeople}`
+          :`${item.cost* item.quantity}`}</td>
     </tr>
   ))}
 </tbody>
-
-
     </table>
     
     </div>
     </>
 };
-
-  
-
   const venueTotalCost = calculateTotalCost("venue");
   const avTotalCost = calculateTotalCost("av");
   const mealsTotalCost = calculateTotalCost("meals");
@@ -154,7 +149,7 @@ if(idType=='#venue' || idType=='#addons' || idType=='#meals'){
   return (
     <>
     <navbar className="navbar_event_conference">
-        <div className="company_logo">Budget Ease</div>
+        <div className="company_logo">Conference Expense Planner</div>
        <div className="left_navbar">
        <div className="nav_links">
           <a href="#venue" onClick={()=>navigateToProducts("#venue")} >Venue</a>
