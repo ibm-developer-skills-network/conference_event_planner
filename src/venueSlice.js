@@ -6,19 +6,19 @@ export const venueSlice = createSlice({
   initialState: [
     {
       img: "https://triggerxchange.com/images/Conference%20room%20Mob%20Ban.webp",
-      name: "Conference Room (30 Members)",
+      name: "Conference Room (12 People)",
       cost: 3500,
       quantity: 0,
     },
     {
       img: "https://upload.wikimedia.org/wikipedia/commons/8/8b/Auditorium_room_107.jpg",
-      name: " Auditorium Hall (100 Members)",
+      name: " Auditorium Hall (200 people)",
       cost: 5500,
       quantity: 0,
     },
     {
       img: "https://www.bloomsonly.com/wpblog/wp-content/uploads/2019/10/6.jpg",
-      name: "Flower Decoration Items",
+      name: "Presentation Room (50 People)",
       cost: 700,
       quantity: 0,
     },
