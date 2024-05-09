@@ -4,7 +4,7 @@ export const avSlice = createSlice({
   name: "av",
   initialState: [
     {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQTJgSJdqWos5IV-HSG9GisNWuhlCnI6H4dML31peMEg&s",
+      img: "https://cdn.pixabay.com/photo/2012/03/01/01/10/business-20031_1280.jpg",
       name: "Projectors",
       cost: 200,
       quantity: 0,
@@ -16,25 +16,20 @@ export const avSlice = createSlice({
       quantity: 0,
     },
     {
-      img: "https://cdn.pixabay.com/photo/2016/01/10/21/05/mic-1132528_640.jpg",
+      img: "https://cdn.pixabay.com/photo/2019/01/11/01/54/public-speaking-3926344_1280.jpg",
       name: "Microphones",
       cost: 45,
       quantity: 0,
     },
     {
-      img: "https://cdn.pixabay.com/photo/2017/03/28/12/15/chairs-2181977_640.jpg",
+      img: "https://cdn.pixabay.com/photo/2017/10/30/19/24/whiteboard-2903269_1280.png",
       name: "Whiteboards",
       cost: 80,
       quantity: 0,
     },
-    // {
-    //   img: "https://m.media-amazon.com/images/I/61aAXzIcs5L._AC_UF1000,1000_QL80_.jpg",
-    //   name: "In-ear Monitors",
-    //   cost: 80,
-    //   quantity: 0,
-    // },
+
     {
-      img: "https://i.pinimg.com/originals/27/9f/ae/279fae97d198471df43b1dace3b2d084.jpg",
+      img: "https://cdn.pixabay.com/photo/2013/12/29/10/15/directory-235079_1280.jpg",
       name: "Signage",
       cost: 80,
       quantity: 0,

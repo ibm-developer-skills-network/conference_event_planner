@@ -1,6 +1,11 @@
 .pricing-app {
- margin-top: 100px;
- margin-left: 40vw;
+ margin-top: 20px;
+ /* margin-left: 40vw; */
+ width: 100vw;
+ height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }
 
 
@@ -13,7 +18,7 @@
   color: #333;
   margin: 0;
   padding: 55px;
-  width: 600px;
+  width: 80vw;
 }
 
 
@@ -22,7 +27,8 @@
   text-transform: uppercase;
   line-height: 1;
   margin: 0;
-  padding: 0 0 10px;
+  /* padding: 0 0 10px; */
+  font-size: 25px;
 }
 
 .pricing-app h2 {

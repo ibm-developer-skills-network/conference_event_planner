@@ -7,7 +7,7 @@
 .first_page {
   display: flex;
   height: 100vh;
-  background-image: url("https://img1.cgtrader.com/items/61898/124f5ef4d1/large/grand-conference-hall-3d-model-max.jpg");
+  background-image: url("https://cdn.pixabay.com/photo/2018/07/05/14/45/conference-3518465_1280.jpg");
   background-size: cover;
   background-position: center;
   justify-content: center;
@@ -33,21 +33,23 @@
 }
 
 .get-started-btn {
-  background-color: rgb(201, 91, 81);
-  color: white;
+  background-color:#EFC16B;
+  /* color: white; */
+  color: black;
   border: none;
   padding: 20px 40px;
-  font-size: 16px;
+  font-size: 19px;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .get-started-btn:hover {
-  background-color: rgb(146, 56, 48);
+  background-color: #c1974a;
 }
 
 .getstarted_btn {
   text-align: center;
+  font-size: 30px;
 }
 
 .main_event {
@@ -58,12 +60,14 @@
   justify-content: center;
   backdrop-filter: blur(7px);
   gap: 100px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(51, 61, 80, 0.7);
 }
 
 .aboutus_main {
   width: 800px;
   color: white;
+  /* background-color: rgba(0,0,0,0.1); */
+
 }
 
 .aboutus_container {
@@ -76,6 +80,9 @@
 
 .aboutus_container p {
   font-size: 23px;
+  font-weight: 700;
+  
+
 }
 
 .first_page_name_btn {
@@ -89,6 +96,7 @@
 
 .first_page_name_btn h1 {
   font-size: 45px;
+  text-align: center;
 }
 
 .first_page_name_btn p {

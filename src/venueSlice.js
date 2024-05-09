@@ -5,32 +5,32 @@ export const venueSlice = createSlice({
   name: "venue",
   initialState: [
     {
-      img: "https://triggerxchange.com/images/Conference%20room%20Mob%20Ban.webp",
+      img: "https://cdn.pixabay.com/photo/2017/03/28/12/06/chairs-2181916_1280.jpg",
       name: "Conference Room (Capacity:15)",
       cost: 3500,
       quantity: 0,
     },
     {
-      img: "https://upload.wikimedia.org/wikipedia/commons/8/8b/Auditorium_room_107.jpg",
-      name: " Auditorium Hall (Capacity:200)",
+      img: "https://cdn.pixabay.com/photo/2016/08/16/09/53/international-conference-1597531_1280.jpg",
+      name: "Auditorium Hall (Capacity:200)",
       cost: 5500,
       quantity: 0,
     },
     {
-      img: "https://www.bloomsonly.com/wpblog/wp-content/uploads/2019/10/6.jpg",
+      img: "https://cdn.pixabay.com/photo/2015/04/20/06/43/meeting-room-730679_1280.jpg",
       name: "Presentation Room (Capacity:50)",
       cost: 700,
       quantity: 0,
     },
     {
-      img: "https://images.squarespace-cdn.com/content/v1/5d08d53ad8f83100015e27be/1561143085264-DEBXO24Y11Y0X4IXJLEI/IMG_0963.jpg",
-      name: " Large Meeting Room (Capacity:10)",
+      img: "https://cdn.pixabay.com/photo/2021/09/26/11/43/armchairs-6657308_1280.jpg",
+      name: "Large Meeting Room (Capacity:10)",
       cost: 900,
       quantity: 0,
     },
     {
-      img: "https://www.wework.com/ideas/wp-content/uploads/sites/4/2019/08/Web_72DPI-20190208-WeWork-Nogizaka-Conference-Room-1A-2-1440x810.jpg",
-      name: "Small Meeting Room (5 People)",
+      img: "https://cdn.pixabay.com/photo/2015/01/08/18/11/laptops-593296_1280.jpg",
+      name: "Small Meeting Room (Capacity:5)",
       cost: 1100,
       quantity: 0,
     },
@@ -44,9 +44,18 @@ export const venueSlice = createSlice({
     // },
   ],
   reducers: {
+    // incrementQuantity: (state, action) => {
+    //   const { payload: index } = action;
+    //   if (state[index]) {
+    //     state[index].quantity++;
+    //   }
+    // },
     incrementQuantity: (state, action) => {
       const { payload: index } = action;
       if (state[index]) {
+        if (state[index].name === " Auditorium Hall (Capacity:200)" && state[index].quantity >= 3) {
+          return; // Prevent further additions for the auditorium room if already at the maximum limit
+        }
         state[index].quantity++;
       }
     },

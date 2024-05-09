@@ -9,6 +9,7 @@ const Basic1 = () => {
   const [showItems, setShowItems] = useState(false);
   const [numberOfPeople, setNumberOfPeople] = useState(1);
   const [section, setSection] = useState("venue");
+
   const handleToggleItems = () => {
     console.log("handleToggleItems called");
     setShowItems(!showItems);
@@ -18,13 +19,20 @@ const Basic1 = () => {
   const avItems = useSelector((state) => state.av);
   const mealsItems = useSelector((state) => state.meals);
   const dispatch = useDispatch();
+  const remainingAuditoriumQuantity = 3 - venueItems.find(item => item.name === "Auditorium Hall (Capacity:200)").quantity;
+  const selectedOtherRoomsCount = venueItems.filter(item => item.name !== "Auditorium Hall (Capacity:200)" && item.quantity > 0).length;
 
   const handleAddToCart = (index) => {
+    if (venueItems[index].name === "Auditorium Hall (Capacity:200)" && venueItems[index].quantity >= 3) {
+      return; // Prevent further additions
+    }
     dispatch(incrementQuantity(index));
   };
 
   const handleRemoveFromCart = (index) => {
-    dispatch(decrementQuantity(index));
+    if (venueItems[index].quantity > 0) {
+      dispatch(decrementQuantity(index));
+    }
   };
   const handleIncrementAvQuantity = (index) => {
     dispatch(incrementAvQuantity(index));
@@ -172,7 +180,7 @@ if(idType=='#venue' || idType=='#addons' || idType=='#meals'){
       <div id="venue" className="venue_container container_main">
         <div className="text">
  
-          <h1>Identify Your Venue Requirements</h1>
+          <h1>Gather Your Venue Requirements</h1>
         </div>
         <div className="venue_selection">
           {venueItems.map((item, index) => (
@@ -182,23 +190,50 @@ if(idType=='#venue' || idType=='#addons' || idType=='#meals'){
               </div>
               <div className="text">{item.name}</div>
               <div>${item.cost}</div>
-              <div className="button_container">
-                {item.quantity === 0 ? (
-                  <button
-                    className="btn-success"
-                    onClick={() => handleAddToCart(index)}
-                  >
-                    Add +
-                  </button>
-                ) : (
-                  <button
-                    className="btn-warning"
-                    onClick={() => handleRemoveFromCart(index)}
-                  >
-                    Remove -
-                  </button>
-                )}
-              </div>
+     <div className="button_container">
+        {venueItems[index].name === "Auditorium Hall (Capacity:200)" ? (
+
+          <>
+          <button
+            className={venueItems[index].quantity === 0 ? "btn-warning btn-disabled" : "btn-minus btn-warning"}
+            onClick={() => handleRemoveFromCart(index)}
+          >
+            &#8211;
+          </button>
+          <span className="selected_count">
+            {venueItems[index].quantity > 0 ? ` ${venueItems[index].quantity}` : "0"}
+          </span>
+          <button
+            className={remainingAuditoriumQuantity === 0? "btn-success btn-disabled" : "btn-success btn-plus"}
+            onClick={() => handleAddToCart(index)}
+          >
+            &#43;
+          </button>
+        </>
+        ) : (
+          <div className="button_container">
+           <button
+              className={venueItems[index].quantity ===0 ? " btn-warning btn-disabled" : "btn-warning btn-plus"}
+              onClick={() => handleRemoveFromCart(index)}
+              // disabled={venueItems[index].quantity === 0} // Disable button if quantity is already 0
+            >
+               &#8211;
+            </button>
+            <span className="selected_count">
+              {venueItems[index].quantity > 0 ? ` ${venueItems[index].quantity}` : "0"}
+            </span>
+            <button
+              className={venueItems[index].quantity === 10 ? " btn-success btn-disabled" : "btn-success btn-plus"}
+              onClick={() => handleAddToCart(index)}
+              // disabled={venueItems[index].quantity === 10}
+            >
+             &#43;
+            </button>
+            
+            
+          </div>
+        )}
+      </div>
             </div>
           ))}
         </div>
@@ -221,19 +256,19 @@ if(idType=='#venue' || idType=='#addons' || idType=='#meals'){
                 </div>
                 <div className="text">{item.name}</div>
                 <div>${item.cost}</div>
-                <div>
+                <div className="addons_btn">
                   <button
-                    className="-btn btn-warning"
+                    className="btn-warning"
                     onClick={() => handleDecrementAvQuantity(index)}
                   >
-                    -
+                    &ndash;
                   </button>
                   <span className="quantity-value">{item.quantity}</span>
                   <button
                     className=" btn-success"
                     onClick={() => handleIncrementAvQuantity(index)}
                   >
-                    +
+                   &#43;
                   </button>
                 </div>
               </div>
