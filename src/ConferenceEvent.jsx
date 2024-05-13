@@ -1,23 +1,32 @@
 import React, { useState } from "react";
 import "./ConferenceEvent.css";
 import TotalCost from "./TotalCost";
+import { useSelector, useDispatch } from "react-redux";
+import { incrementQuantity, decrementQuantity } from "./venueSlice";
 const ConferenceEvent = () => {
     const [showItems, setShowItems] = useState(false);
     const [numberOfPeople, setNumberOfPeople] = useState(1);
+    const venueItems = useSelector((state) => state.venue);
+    const dispatch = useDispatch();
+    const remainingAuditoriumQuantity = 3 - venueItems.find(item => item.name === "Auditorium Hall (Capacity:200)").quantity;
 
     const handleToggleItems = () => {
         console.log("handleToggleItems called");
         setShowItems(!showItems);
     };
 
-  
     const handleAddToCart = (index) => {
-        
-    };
-
-    const handleRemoveFromCart = (index) => {
-       
-    };
+        if (venueItems[index].name === "Auditorium Hall (Capacity:200)" && venueItems[index].quantity >= 3) {
+          return; // Prevent further additions
+        }
+        dispatch(incrementQuantity(index));
+      };
+    
+      const handleRemoveFromCart = (index) => {
+        if (venueItems[index].quantity > 0) {
+          dispatch(decrementQuantity(index));
+        }
+      };
     const handleIncrementAvQuantity = (index) => {
     };
 
@@ -41,10 +50,16 @@ const ConferenceEvent = () => {
     const ItemsDisplay = ({ items }) => {
 
     };
-   
+    const venueTotalCost = calculateTotalCost("venue");
+
     const navigateToProducts = (idType) => {
- 
-    }
+        if (idType == '#venue' || idType == '#addons' || idType == '#meals') {
+          if (showItems) { // Check if showItems is false
+            setShowItems(!showItems); // Toggle showItems to true only if it's currently false
+          }
+        }
+      }
+
     return (
         <>
             <navbar className="navbar_event_conference">
@@ -65,16 +80,66 @@ const ConferenceEvent = () => {
                     ?
                     (
                         <div className="items-infromation">
-                            <div id="venue" className="venue_container container_main">
-                                <div className="text">
+                             <div id="venue" className="venue_container container_main">
+        <div className="text">
+ 
+          <h1>Gather Your Venue Requirements</h1>
+        </div>
+        <div className="venue_selection">
+          {venueItems.map((item, index) => (
+            <div className="venue_main" key={index}>
+              <div className="img">
+                <img src={item.img} alt={item.name} />
+              </div>
+              <div className="text">{item.name}</div>
+              <div>${item.cost}</div>
+     <div className="button_container">
+        {venueItems[index].name === "Auditorium Hall (Capacity:200)" ? (
 
-                                    <h1>Gather Your Venue Requirements</h1>
-                                </div>
-                                <div className="venue_selection">
-                                  
-                                </div>
-                                <div className="total_cost">Total Cost:</div>
-                            </div>
+          <>
+          <button
+            className={venueItems[index].quantity === 0 ? "btn-warning btn-disabled" : "btn-minus btn-warning"}
+            onClick={() => handleRemoveFromCart(index)}
+          >
+            &#8211;
+          </button>
+          <span className="selected_count">
+            {venueItems[index].quantity > 0 ? ` ${venueItems[index].quantity}` : "0"}
+          </span>
+          <button
+            className={remainingAuditoriumQuantity === 0? "btn-success btn-disabled" : "btn-success btn-plus"}
+            onClick={() => handleAddToCart(index)}
+          >
+            &#43;
+          </button>
+        </>
+        ) : (
+          <div className="button_container">
+           <button
+              className={venueItems[index].quantity ===0 ? " btn-warning btn-disabled" : "btn-warning btn-plus"}
+              onClick={() => handleRemoveFromCart(index)}
+            >
+               &#8211;
+            </button>
+            <span className="selected_count">
+              {venueItems[index].quantity > 0 ? ` ${venueItems[index].quantity}` : "0"}
+            </span>
+            <button
+              className={venueItems[index].quantity === 10 ? " btn-success btn-disabled" : "btn-success btn-plus"}
+              onClick={() => handleAddToCart(index)}
+            >
+             &#43;
+            </button>
+            
+            
+          </div>
+        )}
+      </div>
+            </div>
+          ))}
+        </div>
+        <div className="total_cost">Total Cost: ${venueTotalCost}</div>
+      </div>
 
                             {/*Necessary Add-ons*/}
                             <div id="addons" className="venue_container container_main">
