@@ -10,15 +10,7 @@ const ConferenceEvent = () => {
     const dispatch = useDispatch();
     const remainingAuditoriumQuantity = 3 - venueItems.find(item => item.name === "Auditorium Hall (Capacity:200)").quantity;
 
-    const calculateTotalCost = (section) => {
-        let totalCost = 0;
-        if (section === "venue") {
-          venueItems.forEach((item) => {
-            totalCost += item.cost * item.quantity;
-          });
-        return totalCost;
-      };
-      const venueTotalCost = calculateTotalCost("venue");
+    
     const handleToggleItems = () => {
         console.log("handleToggleItems called");
         setShowItems(!showItems);
@@ -46,10 +38,6 @@ const ConferenceEvent = () => {
        
     };
 
-
-    const calculateTotalCost = (section) => {
-       
-    };
     const getItemsFromTotalCost = () => {
         const items = [];
     };
@@ -59,6 +47,16 @@ const ConferenceEvent = () => {
     const ItemsDisplay = ({ items }) => {
 
     };
+    const calculateTotalCost = (section) => {
+        let totalCost = 0;
+        if (section === "venue") {
+          venueItems.forEach((item) => {
+            totalCost += item.cost * item.quantity;
+          });
+        }
+        return totalCost;
+      };
+    const venueTotalCost = calculateTotalCost("venue");
 
     const navigateToProducts = (idType) => {
         if (idType == '#venue' || idType == '#addons' || idType == '#meals') {
