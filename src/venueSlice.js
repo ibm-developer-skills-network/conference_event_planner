@@ -5,31 +5,31 @@ export const venueSlice = createSlice({
   name: "venue",
   initialState: [
     {
-      img: "https://cdn.pixabay.com/photo/2017/03/28/12/06/chairs-2181916_1280.jpg",
+      img: "",
       name: "Conference Room (Capacity:15)",
       cost: 3500,
       quantity: 0,
     },
     {
-      img: "https://cdn.pixabay.com/photo/2016/08/16/09/53/international-conference-1597531_1280.jpg",
+      img: "",
       name: "Auditorium Hall (Capacity:200)",
       cost: 5500,
       quantity: 0,
     },
     {
-      img: "https://cdn.pixabay.com/photo/2015/04/20/06/43/meeting-room-730679_1280.jpg",
+      img: "",
       name: "Presentation Room (Capacity:50)",
       cost: 700,
       quantity: 0,
     },
     {
-      img: "https://cdn.pixabay.com/photo/2021/09/26/11/43/armchairs-6657308_1280.jpg",
+      img: "",
       name: "Large Meeting Room (Capacity:10)",
       cost: 900,
       quantity: 0,
     },
     {
-      img: "https://cdn.pixabay.com/photo/2015/01/08/18/11/laptops-593296_1280.jpg",
+      img: "",
       name: "Small Meeting Room (Capacity:5)",
       cost: 1100,
       quantity: 0,
