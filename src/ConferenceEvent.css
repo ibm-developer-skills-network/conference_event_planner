@@ -13,7 +13,7 @@
     font-size: 24px;
   }
   
-  .venue_selection {
+  .venue_selection,.addons_selection , .meal_selection {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
