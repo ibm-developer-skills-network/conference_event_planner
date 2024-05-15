@@ -7,7 +7,6 @@
     align-items: center;
     justify-content: center;
     width: 80vw;
-    /* background-color: rgb(239, 237, 237); */
     padding: 20px;
     border-radius: 10px;
     margin-left: -180px;
@@ -20,7 +19,6 @@
     gap: 30px;
     width: 90vw;
     margin-left: 250px;
-    /* background-color: red; */
   }
   
   .venue_main {
@@ -52,104 +50,27 @@
     font-size: 30px;
     color: #333;
   }
-  
-  /* Audio-visual data styles */
-  /* .av_data {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 10px;
-    border: 1px solid lightgrey;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-  } */
-  
-  /* .quantity-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .quantity-btn:hover {
-    background-color: #0056b3;
-  } */
-  
   .quantity-value {
     margin: 0 10px;
   }
-  
-  /* Meal data styles */
-  /* .meal_data {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    width: 200px;
-  }
-  
-  .meal_section1 {
-    display: flex;
-    gap: 20px;
-  } */
   .main_container{
-    display: flex;
-    /* flex-direction: column; */
-    /* background-color: red; */
-    
+    display: flex;    
   }
   .items-infromation {
     display: flex;
     flex-direction: column;
     gap: 90px;
     margin-top: 100px;
-    /* background-color: red; */
     width: 100vw;
     align-items: center;
     justify-content: center;
   
   }
-  /* .main_part{
-    width: 100vw;
-    height: 100vh;
-  backdrop-filter: blur(5px);
-  } */
-  /* .btn_items {
-    margin-top: 70px;
-  } */
-  
-  /* header {
-    width: 100vw;
-    height: 100vh;
-  } */
-  
-  
-  
   .meal_item {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
-  
-  
-  /* .total_cost1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    font-size: 30px;
-    color: #333;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    padding: 10px;
-    width: 400px;
-    margin-top: 15px;
-    margin-left: 550px;
-  } */
   .total_cost {
     display: flex;
     justify-content: center;
@@ -176,18 +97,11 @@
     background-color: #f9f9f9;
     color: #000;
   }
-  
-  /* for input */
-  /* .element {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  } */
+
   .input-container{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: red; */
     gap: 10px;
     font-size: 20px;
   }
@@ -201,7 +115,6 @@
   .meal_selection {
     display: flex;
     flex-wrap: wrap;
-    /* background-color: yellow; */
     width: 600px;
     align-items: center;
     justify-content: flex-start;
@@ -219,8 +132,6 @@
   .meal_item .inner {
     display: flex;
     flex-direction: row;
-    /* background-color: red; */
-    /* gap: 10px; */
   }
   .meal_item .inner input {
     width: 100px;
@@ -257,7 +168,6 @@
   
   .display_box1::-webkit-scrollbar-track {
     background-color: transparent; /* For Chrome, Safari, and Opera */
-    /* background-color: #313031; */
     
   }
   
@@ -358,7 +268,6 @@
     gap: 170px;
   }
   .left_navbar{
-    /* background-color: red; */
     width: 60vw;
     display: flex;
     gap: 180px;
