@@ -56,7 +56,7 @@
   .main_container{
     display: flex;    
   }
-  .items-infromation {
+  .items-information {
     display: flex;
     flex-direction: column;
     gap: 90px;

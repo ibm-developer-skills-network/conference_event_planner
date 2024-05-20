@@ -85,7 +85,7 @@ const ConferenceEvent = () => {
                 {!showItems
                     ?
                     (
-                        <div className="items-infromation">
+                        <div className="items-information">
                              <div id="venue" className="venue_container container_main">
         <div className="text">
  
