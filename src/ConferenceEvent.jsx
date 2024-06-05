@@ -89,7 +89,7 @@ const ConferenceEvent = () => {
                              <div id="venue" className="venue_container container_main">
         <div className="text">
  
-          <h1>Gather Your Venue Requirements</h1>
+          <h1>Venue Room Selection</h1>
         </div>
         <div className="venue_selection">
           {venueItems.map((item, index) => (
@@ -153,7 +153,7 @@ const ConferenceEvent = () => {
 
                                 <div className="text">
 
-                                    <h1>Necessary Add-ons:</h1>
+                                    <h1> Add-ons Selection</h1>
 
                                 </div>
                                 <div className="addons_selection">
@@ -169,7 +169,7 @@ const ConferenceEvent = () => {
 
                                 <div className="text">
 
-                                    <h1>Include Meals For The Event</h1>
+                                    <h1>Meals Selection</h1>
                                 </div>
 
                                 <div className="input-container venue_selection">
