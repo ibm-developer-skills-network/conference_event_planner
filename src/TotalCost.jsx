@@ -22,6 +22,22 @@ const TotalCost = ({ totalCosts, ItemsDisplay }) => {
       </div>
     </div>
   );
+const total_amount = totalCosts.venue + totalCosts.av + totalCosts.meals; 
+    return (
+    <> 
+        <h2 id="pre_fee_cost_display" className="price">
+	        ${total_amount}
+        </h2>
+
+
+        <div className="render_items">
+        <ItemsDisplay />
+        </div>
+    </>
+    );
 };
 
+
 export default TotalCost;
+
+
